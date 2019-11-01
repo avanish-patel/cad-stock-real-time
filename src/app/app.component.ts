@@ -24,7 +24,7 @@ export class AppComponent {
     console.log(this.stocks);
 
 
-    this.dataService.getStockData(this.stocks).subscribe((data: any[])=>{
+    this.dataService.getStockData(this.stocks).subscribe((data)=>{
       console.log(data);
     })  
 

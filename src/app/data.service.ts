@@ -18,17 +18,23 @@ export class DataService {
 
   public getStockData(stocks: string[]){
 
-    let headers = new HttpHeaders();
-    headers.set('Origin', 'https://web.tmxmoney.com');
-    headers.set('cache-control', 'no-cache');
-    // headers.set('Acc ept', '*/*');
+    let headers = new HttpHeaders()
+    .set('Origin', '*')
+    .set('Access-Control-Allow-Headers', '*');
+
+    // let headers = new HttpHeaders();
+    // headers.set('Origin', 'https://web.tmxmoney.com');
+    // headers.set('cache-control', 'no-cache');
+    // // headers.set('Acc ept', '*/*');
     // headers.set('Access-Control-Allow-Headers', 'Content-Type');
     // headers.set('Referer', 'https://web.tmxmoney.com/quote.php?qm_symbol=HEXO');
+    // headers.set('Test', 'test');
     // headers = headers.set('Sec-Fetch-Mode', 'cors');
     // headers = headers.set('Content-Type', 'application/json');
     
     const stocksNames: string = stocks.join();
 
-    return this.httpClient.get(this.restServer+stocksNames+this.queryParameters, { headers: headers });
-  }
+      return this.httpClient.get(this.restServer+stocksNames+this.queryParameters, { headers: headers });
+  
+    }
 }
