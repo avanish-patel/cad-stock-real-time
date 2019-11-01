@@ -1,3 +1,5 @@
+import { DataService } from './data.service';
+import { Stock } from './stock';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cad-stock-real-time';
+  
+  stocks: string[] = [];
+
+
+  constructor(private dataService: DataService) {
+
+  }
+
+
+   // Simulate POST /todos
+   addStock(symbol: string) {
+
+    this.stocks.push(symbol);
+    console.log(this.stocks);
+
+
+    this.dataService.getStockData(this.stocks).subscribe((data: any[])=>{
+      console.log(data);
+    })  
+
+
+    return this;
+  }
+
+  getAllStocks(): string[] {
+    return this.stocks;
+  }
+
 }
