@@ -24,9 +24,10 @@ export class AppComponent {
     console.log(this.stocks);
 
 
-    this.dataService.getStockData(this.stocks).subscribe((data)=>{
-      console.log(data);
-    })  
+    this.dataService.getStockData(this.stocks).subscribe(
+      data => console.log('success', data),
+      error => console.log('oops', error)
+    )  
 
 
     return this;
