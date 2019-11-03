@@ -16,19 +16,16 @@
 	<div id="node3">{{stockData.name}}</div><!-- #node3 end -->
 	<div id="node4">$ {{stockData.price}}</div><!-- #node4 end -->
 	
-	<div id="node5">CHANGE: -0.03</div><!-- #node5 end -->
-	<div id="node6">VOLUME: 1,433,032</div><!-- #node6 end -->
-<div id="node7">PREV. CLOSE.
-4.72</div><!-- #node7 end -->
-	<div id="node8">OPEN
-4.50</div><!-- #node8 end -->
-	<div id="node10">52 WEEK LOW: 4.59<br/>
-52 WEEK HIGH: 13.67</div><!-- #node10 end -->
-	<div id="node9">DAY LOW: 4.69<br/>
-DAY HIGH: 4.85</div><!-- #node9 end -->
+	<div id="node5">CHANGE: <strong>{{stockData.change}}({{stockData.changePercent}}%)</strong></div><!-- #node5 end -->
+	<div id="node6">VOLUME: <strong>{{stockData.volume}}</strong></div><!-- #node6 end -->
+<div id="node7">PREV. CLOSE.:<strong> {{stockData.prevClose}}</strong></div><!-- #node7 end -->
+	<div id="node8">OPEN:<strong> {{stockData.open}}</strong></div><!-- #node8 end -->
+	<div id="node10">52 WEEK LOW: <strong>{{stockData.weekLow}}</strong><br/>52 WEEK HIGH:<strong> {{stockData.weekHigh}}</strong></div><!-- #node10 end -->
+	<div id="node9">DAY LOW: <strong>{{stockData.dayLow}}</strong><br/>DAY HIGH:<strong> {{stockData.dayHigh}}</strong></div><!-- #node9 end -->
 </div><!-- #node1 end -->
-
 </div>
 </div>
 
+
+<!--<div class="loader"></div>-->
 </div>

@@ -3,3 +3,14 @@
     font-family: 'Noto Sans', sans-serif;
     background-color: #f3f3f4;
 }
+
+h1{
+    font-weight: 900;
+}
+
+/* body {
+    align-items: center;
+    background-color: #1D1F20;
+    display: flex;
+    justify-content: center;
+  } */

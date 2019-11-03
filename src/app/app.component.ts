@@ -12,11 +12,11 @@ export class AppComponent {
   stocks: string = "";
   stocksData: Stock[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
+  }
 
 
    addStock(symbol: string) {
-
     var startTime = new Date().getTime();
     var addStock = setInterval(() => {
       this.dataService.getStockData(symbol.toUpperCase())
@@ -27,7 +27,19 @@ export class AppComponent {
             return;
         }
           for(let i in data.results.quote){
-              let stock:Stock = new Stock(data.results.quote[i].equityinfo.shortname,data.results.quote[i].pricedata.last);
+              let stock:Stock = new Stock(
+                data.results.quote[i].equityinfo.shortname,
+                data.results.quote[i].pricedata.last,
+                data.results.quote[i].pricedata.change,
+                data.results.quote[i].pricedata.changepercent,
+                data.results.quote[i].pricedata.sharevolume,
+                data.results.quote[i].pricedata.prevclose,
+                data.results.quote[i].pricedata.open,
+                data.results.quote[i].pricedata.low,
+                data.results.quote[i].pricedata.high,
+                0,
+                0
+                );
           
                     this.stocksData[i]=stock;
               }

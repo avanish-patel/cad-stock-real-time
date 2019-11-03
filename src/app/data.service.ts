@@ -8,7 +8,8 @@ import { Response } from './response';
 })
 export class DataService {
 
-  private restServer:string = "http://localhost:8080/stockapi/v1/stocks/";
+  //https://cad-stock-api.herokuapp.com/
+  private restServer:string = "https://cad-stock-api.herokuapp.com/stockapi/v1/stocks/";
 
   constructor(private httpClient: HttpClient) { }
 
