@@ -18,16 +18,14 @@ export class AppComponent {
    addStock(symbol: string) {
 
     var startTime = new Date().getTime();
-    var callStocks = setInterval(() => {
-      this.dataService.getStockData(symbol.toUpperCase()).subscribe(
+    var addStock = setInterval(() => {
+      this.dataService.getStockData(symbol.toUpperCase())
+      .subscribe(
         (data) => {
-
-
           if(new Date().getTime() - startTime > 60000){
-            clearInterval(callStocks);
+            clearInterval(addStock);
             return;
         }
-          console.log('success', data);
           for(let i in data.results.quote){
               let stock:Stock = new Stock(data.results.quote[i].equityinfo.shortname,data.results.quote[i].pricedata.last);
           
@@ -38,8 +36,6 @@ export class AppComponent {
       );
   
     }, 2000);
-    
-    callStocks;
 
     return this;
   }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
-import {HttpParams} from "@angular/common/http";
+import { Observable } from 'rxjs';
+import { Response } from './response';
 
 @Injectable({
   providedIn: 'root'
@@ -10,31 +10,10 @@ export class DataService {
 
   private restServer:string = "http://localhost:8080/stockapi/v1/stocks/";
 
-
-
   constructor(private httpClient: HttpClient) { }
 
+  public getStockData(stocks: string): Observable<Response>{
 
-  public getStockData(stocks: string){
-
-    // let headers = new HttpHeaders()
-    // // .set('Origin', '*')
-    // // .set('cache-control', 'no-cache')
-    // .set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS')
-    // .set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
-    // .set('Access-Control-Allow-Origin', '*');
-
-    // let headers = new HttpHeaders();
-    // headers.set('Origin', 'https://web.tmxmoney.com');
-    // 
-    // // headers.set('Acc ept', '*/*');
-    // headers.set('Access-Control-Allow-Headers', 'Content-Type');
-    // headers.set('Referer', 'https://web.tmxmoney.com/quote.php?qm_symbol=HEXO');
-    // headers.set('Test', 'test');
-    
-    // const stocksNames: string = stocks.join();
-
-      return this.httpClient.get(this.restServer+stocks);
-  
+      return this.httpClient.get<Response>(this.restServer+stocks);
     }
 }

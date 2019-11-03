@@ -2,6 +2,7 @@
 .title{
     margin:25px auto;
     color: #00a8ff;
+    font-weight: 900;
 }
 .input-stock {
     text-align: center;
@@ -55,6 +56,8 @@
   @media only screen and (min-width: 200px) and (max-width: 600px) {
    h1{
        font-size: 30px;
+       font-weight: 900;
+
    }
     #node1 {
     width: 90%;
@@ -72,16 +75,19 @@
 
 #node3
 {
+    font-weight: bold;
 	float: left;
-	width: 60%;
+	width: 57%;
     font-size: 20px;
-    text-align: center;
+    margin-left: 3%;
 }
 #node4
 {
+    font-weight: bold;
 	float: left;
-	width: 40%;
-	font-size: 20px;
+	width: 37%;
+    font-size: 20px;
+    margin-left:3%;
 }
 #node5
 {
