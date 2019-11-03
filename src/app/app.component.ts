@@ -9,32 +9,39 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  stocks: string[] = [];
+  stocks: string = "";
+  stocksData: Stock[] = [];
+
+  constructor(private dataService: DataService) {}
 
 
-  constructor(private dataService: DataService) {
-
-  }
-
-
-   // Simulate POST /todos
    addStock(symbol: string) {
 
-    this.stocks.push(symbol);
-    console.log(this.stocks);
+    var startTime = new Date().getTime();
+    var callStocks = setInterval(() => {
+      this.dataService.getStockData(symbol.toUpperCase()).subscribe(
+        (data) => {
 
 
-    this.dataService.getStockData(this.stocks).subscribe(
-      data => console.log('success', data),
-      error => console.log('oops', error)
-    )  
-
+          if(new Date().getTime() - startTime > 60000){
+            clearInterval(callStocks);
+            return;
+        }
+          console.log('success', data);
+          for(let i in data.results.quote){
+              let stock:Stock = new Stock(data.results.quote[i].equityinfo.shortname,data.results.quote[i].pricedata.last);
+          
+                    this.stocksData[i]=stock;
+              }
+        },
+        error => console.log('oops', error)
+      );
+  
+    }, 2000);
+    
+    callStocks;
 
     return this;
-  }
-
-  getAllStocks(): string[] {
-    return this.stocks;
   }
 
 }

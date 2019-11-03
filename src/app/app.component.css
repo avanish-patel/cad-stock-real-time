@@ -1,6 +1,7 @@
 
 .title{
     margin:25px auto;
+    color: #00a8ff;
 }
 .input-stock {
     text-align: center;
@@ -14,14 +15,16 @@
 }
 
 #input-name{
-    width: 30%;
+    width: 60%;
     /* height: 30px; */
-    padding: 10px;
+    /* padding: 10px; */
 }
 #add-name {
     height: 40px;
     width: 100px;
     margin-left: 10px;
+    background-color: #8c7ae6;
+    border-color: #8c7ae6;
 }
 
 .stock-stack {
@@ -48,3 +51,97 @@
 .stock-stack:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
+
+  @media only screen and (min-width: 200px) and (max-width: 600px) {
+   h1{
+       font-size: 30px;
+   }
+    #node1 {
+    width: 90%;
+    }
+  }
+
+  #node1
+{
+	float: left;
+    width: 400px;
+    padding: 10px 0px;
+    box-shadow: 0 0 40px 0 rgba(38, 34, 98, 0.1);
+    border-left: 7px solid #8c7ae6;
+}
+
+#node3
+{
+	float: left;
+	width: 60%;
+    font-size: 20px;
+    text-align: center;
+}
+#node4
+{
+	float: left;
+	width: 40%;
+	font-size: 20px;
+}
+#node5
+{
+    margin-left: 3%;
+	float: left;
+	width: 47%;
+	font-size: 10px;
+}
+#node6
+{
+    margin-left: 3%;
+	float: left;
+	width: 47%;
+	font-size: 10px;
+}
+#node7
+{
+    margin-left: 3%;
+
+	float: left;
+	width: 47%;
+	font-size: 10px;
+}
+#node8
+{
+    margin-left: 3%;
+	float: left;
+	width: 47%;
+	font-size: 10px;
+}
+#node9
+{
+    margin-left: 3%;
+	float: left;
+	width: 47%;
+	font-size: 10px;
+}
+#node10
+{
+    margin-left: 3%;
+	float: left;
+	width: 47%;
+	font-size: 10px;
+}
+
+.stock-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    /* flex-basis: 50%; */
+    /* flex-direction: unset; */
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.stock-tile-for{
+    margin: 5px 10px;
+    /* display: flex;
+    justify-content: space-evenly; */
+}
+/* .cards{
+    display: flex;
+} */

@@ -8,18 +8,18 @@ import {HttpParams} from "@angular/common/http";
 })
 export class DataService {
 
-  private restServer:string = "https://cad-stock-api.herokuapp.com/stockapi/v1/stocks/";
+  private restServer:string = "http://localhost:8080/stockapi/v1/stocks/";
 
 
 
   constructor(private httpClient: HttpClient) { }
 
 
-  public getStockData(stocks: string[]){
+  public getStockData(stocks: string){
 
-    let headers = new HttpHeaders()
-    // .set('Origin', '*')
-    // .set('cache-control', 'no-cache')
+    // let headers = new HttpHeaders()
+    // // .set('Origin', '*')
+    // // .set('cache-control', 'no-cache')
     // .set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS')
     // .set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
     // .set('Access-Control-Allow-Origin', '*');
@@ -32,9 +32,9 @@ export class DataService {
     // headers.set('Referer', 'https://web.tmxmoney.com/quote.php?qm_symbol=HEXO');
     // headers.set('Test', 'test');
     
-    const stocksNames: string = stocks.join();
+    // const stocksNames: string = stocks.join();
 
-      return this.httpClient.get(this.restServer+stocksNames);
+      return this.httpClient.get(this.restServer+stocks);
   
     }
 }
